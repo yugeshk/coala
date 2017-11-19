@@ -61,7 +61,7 @@ class coalaCITest(unittest.TestCase):
             retval, stdout, stderr = execute_coala(coala.main, 'coala',
                                                    '--non-interactive',
                                                    '-c', os.devnull,
-                                                   '-f', re.escape(filename),
+                                                   '-f', filename,
                                                    '-b',
                                                    'SpaceConsistencyTestBear',
                                                    '--settings',
@@ -87,7 +87,7 @@ class coalaCITest(unittest.TestCase):
                                                    '--non-interactive',
                                                    '-c', os.devnull,
                                                    '-b', 'LineCountTestBear',
-                                                   '-f', re.escape(filename),
+                                                   '-f', filename,
                                                    debug=debug)
             self.assertIn('This file has 1 lines.',
                           stdout,
@@ -105,7 +105,7 @@ class coalaCITest(unittest.TestCase):
             retval, stdout, stderr = execute_coala(
                 coala.main, 'coala', '--non-interactive',
                 '-c', os.devnull,
-                '-f', re.escape(filename),
+                '-f', filename,
                 '-b', 'SpaceConsistencyTestBear',
                 '--settings', 'use_spaces=True',
                 debug=debug)
